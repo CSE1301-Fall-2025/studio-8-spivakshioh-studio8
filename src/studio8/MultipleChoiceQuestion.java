@@ -11,31 +11,40 @@ public class MultipleChoiceQuestion extends Question {
 	 * @param points
 	 * @param choices
 	 */
+		private String[] choices;
+
 	public MultipleChoiceQuestion(String prompt, String answer, int points, String[] choices) {
 		// Call the super class constructor, then create and set
 		// instance variables for any values that aren't handled
 		// by the base class
-		throw new NotYetImplementedException();
+		super(prompt, answer, points);
+		this.choices = choices;
 	}
 	
 	/**
 	 * Display the prompt for the question in addition to 
 	 * the choices present for the question.
 	 */
-	public void displayPrompt() {
-		throw new NotYetImplementedException();
+	public void displayPrompt() { //overriding
+		super.displayPrompt();
+		for (int i=0; i<choices.length; i++){	
+		System.out.println(this.choices[i]);
 	}
+}
+
 	
 	/**
 	 * Getter method for the available choices
 	 * @return String[] of choices
 	 */
 	public String[] getChoices() {
-		throw new NotYetImplementedException();
+		return choices;
+		
 	}
 	
 	public static void main(String[] args) {
-		// TODO: create your own MultipleChoiceQuestion
+		String [] choices =  {"131", "231"};
+		MultipleChoiceQuestion B = new MultipleChoiceQuestion("what is going on in cs", "131", 100,choices);
 	}
 
 }
